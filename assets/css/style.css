@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -15,6 +16,7 @@ header {
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 nav ul li {
@@ -27,13 +29,15 @@ nav ul li a {
     text-decoration: none;
 }
 
+/* Main Content Styles */
 main {
     padding: 20px;
-    max-width: 600px;
+    max-width: 900px; /* Adjusted width for larger tables */
     margin: auto;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Handles table overflow */
 }
 
 h2 {
@@ -41,6 +45,7 @@ h2 {
     color: #333;
 }
 
+/* Form Styles */
 form {
     display: flex;
     flex-direction: column;
@@ -64,25 +69,26 @@ button {
     color: #fff;
     cursor: pointer;
     border: none;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
     background-color: #555;
 }
 
+/* Table Styles */
 table {
-    width: 100%;
+    width: 100%; /* Ensures table fits the container */
     border-collapse: collapse;
     margin-top: 20px;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
+    max-width: 100%; /* Prevents table from exceeding its container */
 }
 
 th, td {
     padding: 8px;
     text-align: left;
+    border: 1px solid #ddd;
+    box-sizing: border-box; /* Ensures padding is included in width calculations */
 }
 
 th {
@@ -92,4 +98,28 @@ th {
 
 tbody tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    th, td {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f4f4f4;
+    }
+
+    tbody tr {
+        margin-bottom: 10px;
+    }
 }
